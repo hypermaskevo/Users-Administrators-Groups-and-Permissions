@@ -16,10 +16,7 @@ modifying file and folder permissions in Windows and Linux
 🔐 Permissions in Linux
 
 🪟 Permissions in Windows (ICACLS)
-
 🔧 Local Users and Groups (Windows)
-powershell
-
 Get-LocalUser
 Get-LocalGroup
 Get-LocalGroupMember
@@ -31,9 +28,6 @@ net user andrea /del
 
 Remove-LocalUser cesar
 🐧 User Management in Linux
-bash
-Копировать
-Редактировать
 cat /etc/sudoers
 sudo cat /etc/sudoers
 sudo su -
@@ -47,8 +41,6 @@ sudo userdel juan
 passwd cindy
 sudo passwd -e victor
 🔐 Permissions in Linux
-bash
-
 ls -l ~/my_file
 ls -l my_cool_file
 chmod u+x my_cool_file
@@ -67,8 +59,6 @@ sudo chmod g+s my_cool_file
 sudo chmod 2755 my_cool_file
 sudo chmod 1755 my_folder/
 Folder Access Examples:
-bash
-
 cd ../qwiklab/documents
 ls -l important_document
 sudo chmod 700 important_document
@@ -80,12 +70,8 @@ sudo chmod g-r secret_folder/
 sudo chmod o-r secret_folder/
 sudo chmod 720 secret_folder/
 Ownership Example:
-bash
-
 sudo chown cook /home/qwiklab/taco
-🪟 Permissions in Windows (ICACLS)
-cmd
-
+Permissions in Windows (ICACLS)
 icacls C:\Users\cindy\Desktop\
 icacls /?
 
@@ -103,8 +89,6 @@ ICACLS C:\Users\Qwiklab\Music\ /remove "Everyone"
 ICACLS C:\Users\Qwiklab\Documents\not_so_important_document /grant "Authenticated Users:(w)"
 ICACLS C:\Users\Qwiklab\Documents\public_document /grant "Everyone:(r)"
 ✅ Examples: Combined Permission Edits
-bash
-
 # Linux
 ls -l not_so_important_document
 sudo chmod u+x not_so_important_document
@@ -113,14 +97,4 @@ sudo chmod a+r not_so_important_document
 
 ls -l public_document
 sudo chmod 777 public_document
-cmd
-
-:: Windows
-ICACLS C:\Users\Qwiklab\Documents\public_document /grant "Everyone:(rwx)"
-📌 Notes
-Windows uses ICACLS for fine-grained access control.
-
-Linux permissions: chmod, chown, chgrp, ls -l for visibility.
-
-Ownership & permission management is critical in system administration and cybersecurity.
 
